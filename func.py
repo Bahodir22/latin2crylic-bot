@@ -1295,7 +1295,7 @@ def to_cyrillic(text):
             r'\b(%s)' % word,
             replace_exception_words,
             text,
-            flags=re.U
+            flags=re.U | re.I
         )
 
     # compounds
