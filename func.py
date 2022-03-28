@@ -27,7 +27,8 @@ LATIN_TO_CYRILLIC = {
     'x': 'х', 'X': 'Х',
     'y': 'й', 'Y': 'Й',
     'z': 'з', 'Z': 'З',
-    '\'': 'ъ',  # TODO: case?
+    '\'': 'ъ', '‘': 'ъ',
+    '`': 'ъ','ʻ': 'ъ',# TODO: case?
 }
 LATIN_VOWELS = (
     'a', 'A', 'e', 'E', 'i', 'I', 'o', 'O', 'u', 'U', 'o‘', 'O‘'
@@ -1201,14 +1202,14 @@ CYRILLIC_TO_LATIN = {
     'ц': 's', 'Ц': 'S',
     'ч': 'ch', 'Ч': 'Ch',
     'ш': 'sh', 'Ш': 'Sh',
-    'ъ': 'ʼ', 'Ъ': 'ʼ',
+    'ъ': '‘', 'Ъ': '‘',
     'ь': '', 'Ь': '',
     'э': 'e', 'Э': 'E',
     'ю': 'yu', 'Ю': 'Yu',
     'я': 'ya', 'Я': 'Ya',
-    'ў': 'oʻ', 'Ў': 'Oʻ',
+    'ў': 'o‘', 'Ў': 'O‘',
     'қ': 'q', 'Қ': 'Q',
-    'ғ': 'gʻ', 'Ғ': 'Gʻ',
+    'ғ': 'g‘', 'Ғ': 'G‘',
     'ҳ': 'h', 'Ҳ': 'H',
 }
 CYRILLIC_VOWELS = (
@@ -1231,6 +1232,7 @@ def to_cyrillic(text):
         'sh': 'ш', 'Sh': 'Ш', 'SH': 'Ш',
         # This line must come before 'yo' because of it's apostrophe
         'yo‘': 'йў', 'Yo‘': 'Йў', 'YO‘': 'ЙЎ',
+        'yo\'': 'йў', 'Yoʼ': 'Йў', 'YOʼ': 'ЙЎ',
     }
     compounds_second = {
         'yo': 'ё', 'Yo': 'Ё', 'YO': 'Ё',
@@ -1239,8 +1241,8 @@ def to_cyrillic(text):
         'ya': 'я', 'Ya': 'Я', 'YA': 'Я',
         'ye': 'е', 'Ye': 'Е', 'YE': 'Е',
         # different kinds of apostrophes
-        'o‘': 'ў', 'O‘': 'Ў', 'oʻ': 'ў', 'Oʻ': 'Ў','o\'': 'ў', 'O\'': 'Ў','o`': 'ў', 'O`': 'Ў',
-        'g‘': 'ғ', 'G‘': 'Ғ', 'gʻ': 'ғ', 'Gʻ': 'Ғ','g\'': 'ғ', 'G\'': 'Ғ','g`': 'ғ', 'G`': 'Ғ',
+        'o‘': 'ў', 'O‘': 'Ў', 'oʼ': 'ў', 'Oʼ': 'Ў','o\'': 'ў', 'O\'': 'Ў','o`': 'ў', 'O`': 'Ў',
+        'g‘': 'ғ', 'Gʼ': 'Ғ', 'gʼ': 'ғ', 'Gʼ': 'Ғ','g\'': 'ғ', 'G\'': 'Ғ','g`': 'ғ', 'G`': 'Ғ',
     }
     beginning_rules = {
         'ye': 'е', 'Ye': 'Е', 'YE': 'Е',
@@ -1261,7 +1263,7 @@ def to_cyrillic(text):
     }
 
     # standardize some characters
-    # the first one is the windows string, the second one is the mac string
+    # the first one is the windows string, the second one is the mac string dnwoibod
     # text = text.replace('\'', '‘')
 
     def replace_soft_sign_words(m):
