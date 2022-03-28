@@ -1263,7 +1263,7 @@ def to_cyrillic(text):
     }
 
     # standardize some characters
-    # the first one is the windows string, the second one is the mac string
+    # the first one is the windows string, the second one is the mac string dnwoibod
     # text = text.replace('\'', '‘')
 
     def replace_soft_sign_words(m):
