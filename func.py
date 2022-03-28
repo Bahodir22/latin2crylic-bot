@@ -27,7 +27,7 @@ LATIN_TO_CYRILLIC = {
     'x': 'х', 'X': 'Х',
     'y': 'й', 'Y': 'Й',
     'z': 'з', 'Z': 'З',
-    'ʼ': 'ъ',  # TODO: case?
+    '\'': 'ъ',  # TODO: case?
 }
 LATIN_VOWELS = (
     'a', 'A', 'e', 'E', 'i', 'I', 'o', 'O', 'u', 'U', 'o‘', 'O‘'
@@ -1149,6 +1149,7 @@ SOFT_SIGN_WORDS = {
     'xrustal': 'хрусталь',
     'selsiy': 'цельсий',
     'sirkul': 'циркуль',
+    'sirk': 'цирк',
     'sokol': 'цоколь',
     'chizel': 'чизель',
     'shagren': 'шагрень',
@@ -1261,7 +1262,7 @@ def to_cyrillic(text):
 
     # standardize some characters
     # the first one is the windows string, the second one is the mac string
-    text = text.replace('ʻ', '‘')
+    # text = text.replace('\'', '‘')
 
     def replace_soft_sign_words(m):
         word = m.group(1)
