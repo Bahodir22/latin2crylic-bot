@@ -1236,13 +1236,13 @@ def to_cyrillic(text):
     }
     compounds_second = {
         'yo': 'ё', 'Yo': 'Ё', 'YO': 'Ё',
-        # 'ts': 'ц', 'Ts': 'Ц', 'TS': 'Ц',  # No need for this, see TS_WORDS
+        # 'ts': 'ц', 'Ts': 'Ц', 'TS': 'Ц',  # No need for this, see TS_WORDS hvdnk
         'yu': 'ю', 'Yu': 'Ю', 'YU': 'Ю',
         'ya': 'я', 'Ya': 'Я', 'YA': 'Я',
         'ye': 'е', 'Ye': 'Е', 'YE': 'Е',
         # different kinds of apostrophes
-        'o‘': 'ў', 'O‘': 'Ў', 'oʼ': 'ў', 'Oʼ': 'Ў','o\'': 'ў', 'O\'': 'Ў','o`': 'ў', 'O`': 'Ў',
-        'g‘': 'ғ', 'Gʼ': 'Ғ', 'gʼ': 'ғ', 'Gʼ': 'Ғ','g\'': 'ғ', 'G\'': 'Ғ','g`': 'ғ', 'G`': 'Ғ',
+        'o‘': 'ў', 'O‘': 'Ў', 'oʼ': 'ў', 'Oʼ': 'Ў','o\'': 'ў', 'O\'': 'Ў','o`': 'ў', 'O`': 'Ў', 'oʻ': 'ў', 'Oʻ': 'Ў',
+        'g‘': 'ғ', 'Gʼ': 'Ғ', 'gʼ': 'ғ', 'Gʼ': 'Ғ','g\'': 'ғ', 'G\'': 'Ғ','g`': 'ғ', 'G`': 'Ғ', 'gʻ': 'ғ', 'Gʻ': 'Ғ',
     }
     beginning_rules = {
         'ye': 'е', 'Ye': 'Е', 'YE': 'Е',
@@ -1263,7 +1263,7 @@ def to_cyrillic(text):
     }
 
     # standardize some characters
-    # the first one is the windows string, the second one is the mac string dnwoibod
+    # the first one is the windows string, the second one is the mac string
     # text = text.replace('\'', '‘')
 
     def replace_soft_sign_words(m):
